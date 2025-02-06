@@ -1,0 +1,37 @@
+\NewDocumentCommand\piproj{}{\pi\parens}
+\newcommand{\RANSAC}{RANSAC\xspace}
+
+\NewDocumentCommand\fg{}{\mathrm{g}}
+\NewDocumentCommand\fh{}{\mathrm{h}}
+\NewDocumentCommand\ff{}{\mathrm{f}}
+\NewDocumentCommand\fe{}{\mathrm{e}}
+\NewDocumentCommand\fx{}{\mathrm{x}}
+\NewDocumentCommand\fy{}{\mathrm{y}}
+\NewDocumentCommand\fancybox{m}{%
+    \fbox{\parbox[c][1.5em][c]{2em}{\makebox[2em]{\ensuremath{#1}}}}
+}
+
+\NewDocumentCommand\dist{O{}}{d_{\text{#1}}\parens}
+\NewDocumentCommand\sqdist{O{}}{d_{\text{#1}}^2\parens}
+
+
+\DeclareMathOperator{\BRDFl}{BRDF_{\lambda}}
+\DeclareMathOperator{\BRDF}{BRDF}%
+\DeclareMathOperator{\cosplus}{\cos^{+}}%
+
+\NewDocumentCommand\rotmat{}{%
+ \begin{pmatrix}%
+ \cos \theta & -\sin \theta \\% 
+ \sin \theta & \cos \theta% 
+ \end{pmatrix}% 
+ }%
+
+ \NewDocumentCommand\rotmatz{}{%
+ \begin{pmatrix}%
+ \cos \theta & -\sin \theta & 0 \\% 
+ \sin \theta & \cos \theta & 0 \\%
+ 0 & 0 & 1\\%
+ \end{pmatrix}% 
+ }%
+
+ \NewDocumentCommand\linf{}{\vbl_\infty}

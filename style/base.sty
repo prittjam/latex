@@ -7,18 +7,6 @@
 \NewDocumentCommand\tabsref{m}{Tables~{\ref{#1}}}
 \NewDocumentCommand\algref{m}{Algorithm~{\ref{#1}}}
 
-%%%%%%%%% abbreviations
-\makeatletter
-\DeclareRobustCommand\onedot{\futurelet\@let@token\@onedot}
-\def\@onedot{\ifx\@let@token.\else.\null\fi\xspace}
-\def\eg{\emph{e.g}\onedot} \def\Eg{\emph{E.g}\onedot}
-\def\ie{\emph{i.e}\onedot} \def\Ie{\emph{I.e}\onedot}
-\def\cf{\emph{c.f}\onedot} \def\Cf{\emph{C.f}\onedot}
-\def\etc{\emph{etc}\onedot} \def\vs{\emph{vs}\onedot}
-\def\wrt{w.r.t\onedot} \def\dof{d.o.f\onedot}
-\def\etal{\emph{et al}\onedot}
-\makeatother
-
 %%%%%%%%%% colors
 \definecolor{mycolor1}{rgb}{0,0,0}%
 \definecolor{mycolor2}{rgb}{1,0,1}%
@@ -50,3 +38,9 @@
 \def\red#1{\textcolor{red}{\textbf{#1}}}
 
 \newcommand{\mycbox}[1]{\tikz{\path[draw=#1,fill=#1] (0,0) rectangle (5pt,5pt);}}
+
+\newcommand*{\figuretitle}[1]{%
+    {\centering%   <--------  will only affect the title because of the grouping (by the
+    \textbf{#1}%              braces before \centering and behind \medskip). If you remove
+    \par\medskip}%            these braces the whole body of a {figure} env will be centered.
+}
